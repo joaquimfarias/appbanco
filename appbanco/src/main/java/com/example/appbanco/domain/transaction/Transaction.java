@@ -4,7 +4,7 @@ package com.example.appbanco.domain.transaction;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
+
 
 import com.example.appbanco.domain.users.Users;
 
