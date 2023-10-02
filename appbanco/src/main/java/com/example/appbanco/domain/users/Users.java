@@ -8,6 +8,7 @@ import lombok.*;
 @Entity
 @Table
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
@@ -35,4 +36,17 @@ public class Users {
 
     @Enumerated(EnumType.STRING)
     private UserType UserType ;
+
+
+    public Users(UsersDTO user){
+
+        this.firstname = user.firstname();
+        this.lastname = user.lastname();
+        this.document = user.document();
+        this.balance = user.balance() ;
+        this.email = user.email();
+        this.password = user.password();
+        this.UserType= user.UserType() ;
+
+    }
 }

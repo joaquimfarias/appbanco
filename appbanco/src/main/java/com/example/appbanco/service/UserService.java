@@ -1,6 +1,7 @@
 package com.example.appbanco.service;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.appbanco.domain.users.UserType;
 import com.example.appbanco.domain.users.Users;
+import com.example.appbanco.domain.users.UsersDTO;
 import com.example.appbanco.repositories.UserRepository;
 
 
@@ -42,5 +44,16 @@ public class UserService {
     public void saveUser(Users user){
 
         this.repository.save(user);
+    }
+
+    public Users createUser(UsersDTO data){
+        Users newuser = new Users(data);
+        this.saveUser(newuser);
+        return newuser ;
+    }
+
+    public List<Users> getAllUsers(){
+
+    return this.repository.findAll();
     }
 }
